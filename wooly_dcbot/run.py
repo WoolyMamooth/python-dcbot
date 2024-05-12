@@ -59,7 +59,7 @@ def run():
     intents = Intents.default()
     intents.message_content = True
     client = Client(intents=intents)
-    
+
     if TOKEN == '':
         print("NO TOKEN, LOADING TOKEN")
         load_token()
