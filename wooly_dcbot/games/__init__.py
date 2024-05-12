@@ -1,3 +1,3 @@
-import hangman
-import math_practice
-import tictactoe
+from . import hangman
+from . import math_practice
+from . import tictactoe

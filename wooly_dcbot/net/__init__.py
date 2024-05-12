@@ -1,2 +1,2 @@
-import anime
-import api
+from . import anime
+from . import api
