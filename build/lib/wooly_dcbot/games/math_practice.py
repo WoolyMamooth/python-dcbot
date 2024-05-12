@@ -48,8 +48,6 @@ class GameSession:
 
         operation=random.choice(["+","-","*"])
 
-        question=f'{num1}{operation}{num2}'
-
         if operation=='+':
             self.answer= num1 + num2
         elif operation=='-':
@@ -60,6 +58,8 @@ class GameSession:
             self.answer= num1 - num2
         elif operation=="*":
             self.answer= num1 * num2
+
+        question=f'{num1}{operation}{num2}'
 
         self.turn+=1
         return question

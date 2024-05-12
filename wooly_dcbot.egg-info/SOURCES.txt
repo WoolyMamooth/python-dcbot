@@ -15,3 +15,10 @@ wooly_dcbot/games/tictactoe.py
 wooly_dcbot/net/__init__.py
 wooly_dcbot/net/anime.py
 wooly_dcbot/net/api.py
+wooly_dcbot/games/__init__.py
+wooly_dcbot/games/hangman.py
+wooly_dcbot/games/math_practice.py
+wooly_dcbot/games/tictactoe.py
+wooly_dcbot/net/__init__.py
+wooly_dcbot/net/anime.py
+wooly_dcbot/net/api.py
