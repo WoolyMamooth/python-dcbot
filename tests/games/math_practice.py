@@ -1,5 +1,5 @@
 import unittest
-from src.games.math_practice import GameSession
+from wooly_dcbot.games.math_practice import GameSession
 
 class TestGameSession(unittest.TestCase):
     def setUp(self):

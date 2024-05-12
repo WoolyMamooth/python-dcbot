@@ -1,4 +1,4 @@
-from src.net import api
+from wooly_dcbot.net import api
 
 
 def wrap_in_backtick(string:str)->str:

@@ -1,12 +1,12 @@
 import unittest
 from unittest.mock import patch
-from src.net.anime import Anime, update_list, get_random, animes
+from wooly_dcbot.net.anime import Anime, update_list, get_random, animes
 
 
 class TestAnime(unittest.TestCase):
-    @patch('src.net.anime.webdriver.Chrome')
-    @patch('src.net.anime.webdriver.ChromeOptions')
-    @patch('src.net.anime.bs4.BeautifulSoup')
+    @patch('wooly_dcbot.net.anime.webdriver.Chrome')
+    @patch('wooly_dcbot.net.anime.webdriver.ChromeOptions')
+    @patch('wooly_dcbot.net.anime.bs4.BeautifulSoup')
     def test_update_list(self, mock_BeautifulSoup, mock_ChromeOptions, mock_Chrome):
         mock_driver = mock_Chrome.return_value
         mock_driver.get.return_value = None
@@ -16,7 +16,7 @@ class TestAnime(unittest.TestCase):
         update_list()
         self.assertEqual(len(animes), 2)
 
-    @patch('src.net.anime.random.choice')
+    @patch('wooly_dcbot.net.anime.random.choice')
     def test_get_random(self, mock_choice):
         mock_anime = Anime('Mock Anime', '9', 'https://example.com')
         mock_choice.return_value = mock_anime

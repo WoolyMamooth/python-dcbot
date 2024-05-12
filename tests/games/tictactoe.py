@@ -1,5 +1,5 @@
 import unittest
-from src.games.tictactoe import GameSession, check_win
+from wooly_dcbot.games.tictactoe import GameSession, check_win
 
 class TestGameSession(unittest.TestCase):
     def setUp(self):

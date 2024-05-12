@@ -1,7 +1,7 @@
 import random
 
-from src import utils
-from src.net.api import add_exp
+from wooly_dcbot import utils
+from wooly_dcbot.net.api import add_exp
 
 EXP_PER_WIN=100
 HELP=("This is a game designed to help you practice math. "

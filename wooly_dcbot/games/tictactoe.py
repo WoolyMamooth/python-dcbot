@@ -1,6 +1,6 @@
-from src import utils
-from src.net import api
-from src.utils import wrap_in_backtick, bold
+from wooly_dcbot import utils
+from wooly_dcbot.net import api
+from wooly_dcbot.utils import wrap_in_backtick, bold
 
 PLAYER_CHAR= 'X'
 BOT_CHAR= 'O'

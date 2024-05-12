@@ -1,6 +1,6 @@
-import src.net.api
-from src.net.api import add_exp
-from src import utils
+import wooly_dcbot.net.api
+from wooly_dcbot.net.api import add_exp
+from wooly_dcbot import utils
 
 EXP_PER_WIN=100
 HELP=("This is a simple game of hangman, I will think of a word and write as many _ s in chat as the word is long. "
@@ -11,7 +11,7 @@ sessions: dict = {}
 
 class GameSession:
     def __init__(self):
-        self.word, self.link= src.net.api.hangman_get_word()
+        self.word, self.link= wooly_dcbot.net.api.hangman_get_word()
         self.shown_word=""
         for i in range(len(self.word)):
             self.shown_word += '_'

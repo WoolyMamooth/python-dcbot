@@ -1,5 +1,5 @@
 import unittest
-import src.games.hangman as hangman
+import wooly_dcbot.games.hangman as hangman
 
 class TestHangman(unittest.TestCase):
     def setUp(self):
