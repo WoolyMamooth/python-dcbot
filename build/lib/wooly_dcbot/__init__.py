@@ -1,5 +1,5 @@
 from . import games
 from . import net
 from . import run
-import utils
-import responses
+from . import utils
+from . import responses

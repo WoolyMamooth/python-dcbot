@@ -1,8 +1,8 @@
 from discord import Message
 
-from net import api, anime
-from games import tictactoe, math_practice, hangman
-import utils
+from wooly_dcbot.net import api, anime
+from wooly_dcbot.games import tictactoe, math_practice, hangman
+from wooly_dcbot import utils
 
 commands:list=["help","tictac","hangman","math","anime","level"]
 def get_response(user_message: Message) -> str:

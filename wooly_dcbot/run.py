@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from discord import Intents, Client, Message
 
-from responses import get_response
+from wooly_dcbot.responses import get_response
 
 TOKEN=''
 client=''
