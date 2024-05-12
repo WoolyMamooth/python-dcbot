@@ -1,7 +1,6 @@
-import net.api
-from net.api import add_exp
-import utils
-
+import src.net.api
+from src.net.api import add_exp
+from src import utils
 
 EXP_PER_WIN=100
 HELP=("This is a simple game of hangman, I will think of a word and write as many _ s in chat as the word is long. "
@@ -12,7 +11,7 @@ sessions: dict = {}
 
 class GameSession:
     def __init__(self):
-        self.word, self.link= net.api.hangman_get_word()
+        self.word, self.link= src.net.api.hangman_get_word()
         self.shown_word=""
         for i in range(len(self.word)):
             self.shown_word += '_'
@@ -28,15 +27,15 @@ class GameSession:
                 self.shown_word ="".join(temp)
                 flag=True
         if self.shown_word==self.word:
-            return "Yes, the word was\n"+utils.wrap_in_backtick(self.word)+"\nYou win! Congrats!\n"+self.link
+            return "Yes, the word was\n"+ utils.wrap_in_backtick(self.word)+ "\nYou win! Congrats!\n"+self.link
         if flag:
             return "Correct! " + utils.wrap_in_backtick(self.shown_word)
 
         self.wrong_guesses += 1
-        if self.wrong_guesses >= 7:
-            return draw_hangman(self.wrong_guesses)+"\nIt seems you lose this time. The word was:\n"+utils.wrap_in_backtick(self.word)+"\n"+self.link
+        if self.wrong_guesses >= 8:
+            return draw_hangman(self.wrong_guesses)+"\nIt seems you lose this time. The word was:\n"+ utils.wrap_in_backtick(self.word)+ "\n"+self.link
 
-        return draw_hangman(self.wrong_guesses)+"\nIncorrect.\n"+utils.wrap_in_backtick(self.shown_word)
+        return draw_hangman(self.wrong_guesses)+"\nIncorrect.\n"+ utils.wrap_in_backtick(self.shown_word)
 
 
 def draw_hangman(stage:int):
@@ -112,7 +111,7 @@ def responses(message, user):
         return response
     else:
         if sessions[user].new:
-            response="Let's begin:\n"+utils.wrap_in_backtick(sessions[user].shown_word)
+            response="Let's begin:\n" + utils.wrap_in_backtick(sessions[user].shown_word)
             sessions[user].new=False
             return response
 
@@ -125,7 +124,7 @@ def responses(message, user):
             return response
         elif "win" in response:
             if add_exp(user, 100*len(sessions[user].word)):
-                response=utils.level_up_wrapper(response,user)
+                response= utils.level_up_wrapper(response, user)
             sessions.pop(user)
             return response
         else:

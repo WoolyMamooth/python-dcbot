@@ -1,6 +1,6 @@
-import utils
-from net import api
-from utils import wrap_in_backtick, bold
+from src import utils
+from src.net import api
+from src.utils import wrap_in_backtick, bold
 
 PLAYER_CHAR= 'X'
 BOT_CHAR= 'O'
@@ -129,14 +129,14 @@ def responses(message, user):
             return ttt_sessions[user].board_to_string()
         elif response == "D":
             response = ttt_sessions[user].board_to_string() + "\nIt's a draw!"
-            if api.add_exp(user, EXP_PER_WIN*0.5):
-                response=utils.level_up_wrapper(response, user)
+            if api.add_exp(user, EXP_PER_WIN * 0.5):
+                response= utils.level_up_wrapper(response, user)
             ttt_sessions.pop(user)
             return response
         elif response == PLAYER_CHAR:
             response = ttt_sessions[user].board_to_string() + "\nYou win! Good job! :D"
             if api.add_exp(user, EXP_PER_WIN):
-                response=utils.level_up_wrapper(response, user)
+                response= utils.level_up_wrapper(response, user)
             ttt_sessions.pop(user)
             return response
         elif response == BOT_CHAR:
@@ -145,17 +145,3 @@ def responses(message, user):
             return response
         else:
             return response
-
-
-if __name__ == '__main__':
-    session = GameSession('Wooly')
-
-    print("Let's play!\n" + session.board_to_string())
-    j = 1
-    while j < 9:
-        res = session.next_turn(int(input("Next step: ")))
-        if res == '-':
-            j += 1
-            print(session.board_to_string())
-        else:
-            print(res)

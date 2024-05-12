@@ -1,7 +1,7 @@
 import random
 
-import utils
-from net.api import add_exp
+from src import utils
+from src.net.api import add_exp
 
 EXP_PER_WIN=100
 HELP=("This is a game designed to help you practice math. "
@@ -82,7 +82,7 @@ def responses(message,user):
     if message == 'exit' or message == 'stop':
         response="Okay, let's do something else!"
         if add_exp(user,EXP_PER_WIN*sessions[user].turn):
-            response=utils.level_up_wrapper(response,user)
+            response= utils.level_up_wrapper(response, user)
         sessions.pop(user)
     else:
         if sessions[user].turn!=0:
@@ -97,7 +97,7 @@ def responses(message,user):
                 response+=(random.choice(["Sadly that's incorrect.","Sadly, no.","Unfortunately, no."])
                            +" The correct answer was " + str(sessions[user].answer) + ". Better luck next time")
                 if add_exp(user,EXP_PER_WIN*sessions[user].turn):
-                    response=utils.level_up_wrapper(response,user)
+                    response= utils.level_up_wrapper(response, user)
                 sessions.pop(user)
         else:
             response+=random.choice(['Lets start!'])+" What is "+sessions[user].next_question()+" ?"

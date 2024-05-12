@@ -1,4 +1,4 @@
-from net import api
+from src.net import api
 
 
 def wrap_in_backtick(string:str)->str:

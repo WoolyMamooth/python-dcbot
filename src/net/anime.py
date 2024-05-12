@@ -4,10 +4,10 @@ import random
 import bs4
 from selenium import webdriver
 
-import utils
+from src import utils
 
-HELP=("If you use the "+utils.bold("!anime")+" command, I will recommend you an anime based on the MAL page of"
-      " my creator. You can also use "+utils.bold("!anime update")+
+HELP=("If you use the " + utils.bold("!anime") + " command, I will recommend you an anime based on the MAL page of"
+      " my creator. You can also use " + utils.bold("!anime update") +
       " in which case I will check his page and update the list in my memory.")
 
 

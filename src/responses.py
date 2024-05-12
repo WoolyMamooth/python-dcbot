@@ -14,10 +14,10 @@ def get_response(user_message: Message) -> str:
         return tictactoe.responses(lowered, user)
 
     if math_practice.has_user(user):
-        return math_practice.responses(lowered,user)
+        return math_practice.responses(lowered, user)
 
     if hangman.has_user(user):
-        return hangman.responses(lowered,user)
+        return hangman.responses(lowered, user)
 
     # handles general interaction
     if lowered == '':
@@ -43,7 +43,7 @@ def get_response(user_message: Message) -> str:
         response="List of commands:\n"
         for c in commands:
             response+=f'\t!{c}\n'
-        response+=("You can also add "+utils.italic("help")+" after any other command to learn more about it. "
+        response+=("You can also add " + utils.italic("help") + " after any other command to learn more about it. "
                    "Please remember that I only pay attention to messages starting with a ! character, even if "
                    "your message is just a number, or a letter. Have fun!")
         return response
@@ -55,21 +55,21 @@ def get_response(user_message: Message) -> str:
 
     elif 'math' in lowered:
         math_practice.new_session(user)
-        return math_practice.responses(lowered,user)
+        return math_practice.responses(lowered, user)
 
     elif 'hang' in lowered:
         hangman.new_session(user)
-        return hangman.responses(lowered,user)
+        return hangman.responses(lowered, user)
 
     #OTHER
     elif 'anime' in lowered:
         if 'update' in lowered:
             anime.update_list()
             return "Okay, I updated the list."
-        a=anime.get_random()
+        a= anime.get_random()
         return "I would recommend watching "+a.title+" if you havent seen it. A man of great taste gave it a score of "+a.score+"/10.\n"+a.link
 
     elif 'level' in lowered:
-        return "You are level "+utils.bold(api.whats_my_level(user))+ "! You can level up by playing games."
+        return "You are level "+ utils.bold(api.whats_my_level(user))+ "! You can level up by playing games."
     else:
-        return "Unkown command, please use "+utils.bold("!help")+" for more information!"
+        return "Unkown command, please use "+ utils.bold("!help")+ " for more information!"

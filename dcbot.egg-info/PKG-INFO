@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: dcbot
+Version: 0.6.9
+Summary: simple discord bot
+Home-page: 
+Author: Wooly
+Author-email: 
+Requires-Dist: beautifulsoup4==4.12.3
+Requires-Dist: selenium==4.20.0
+Requires-Dist: requests==2.31.0
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: discord==2.3.2
