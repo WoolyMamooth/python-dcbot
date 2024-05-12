@@ -1,1 +1,3 @@
 wooly_dcbot
+wooly_dcbot/games
+wooly_dcbot/net

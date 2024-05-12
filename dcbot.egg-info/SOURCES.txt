@@ -8,3 +8,17 @@ wooly_dcbot/__init__.py
 wooly_dcbot/responses.py
 wooly_dcbot/run.py
 wooly_dcbot/utils.py
+wooly_dcbot/games/__init__.py
+wooly_dcbot/games/hangman.py
+wooly_dcbot/games/math_practice.py
+wooly_dcbot/games/tictactoe.py
+wooly_dcbot/net/__init__.py
+wooly_dcbot/net/anime.py
+wooly_dcbot/net/api.py
+wooly_dcbot/games/__init__.py
+wooly_dcbot/games/hangman.py
+wooly_dcbot/games/math_practice.py
+wooly_dcbot/games/tictactoe.py
+wooly_dcbot/net/__init__.py
+wooly_dcbot/net/anime.py
+wooly_dcbot/net/api.py

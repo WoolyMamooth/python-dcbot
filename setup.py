@@ -2,8 +2,8 @@ from setuptools import setup
 
 setup(
     name='dcbot',
-    version='0.7.3',
-    packages=['wooly_dcbot'],
+    version='0.7.4',
+    packages=['wooly_dcbot','wooly_dcbot/games','wooly_dcbot/net'],
     url='',
     license='',
     author='Wooly',
