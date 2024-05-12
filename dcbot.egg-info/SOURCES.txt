@@ -5,6 +5,6 @@ dcbot.egg-info/dependency_links.txt
 dcbot.egg-info/requires.txt
 dcbot.egg-info/top_level.txt
 wooly_dcbot/__init__.py
-wooly_dcbot/main.py
 wooly_dcbot/responses.py
+wooly_dcbot/run.py
 wooly_dcbot/utils.py
