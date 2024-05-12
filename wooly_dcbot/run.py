@@ -5,6 +5,8 @@ from discord import Intents, Client, Message
 from responses import get_response
 
 TOKEN=''
+client=''
+
 def load_token(token=''):
     if token=='':
         # LOAD TOKEN
@@ -12,11 +14,6 @@ def load_token(token=''):
         TOKEN = os.getenv('DISCORD_TOKEN')
     else:
         TOKEN = token
-
-# SET UP BOT
-intents = Intents.default()
-intents.message_content = True
-client = Client(intents=intents)
 
 # MESSAGES
 async def send_message(message: Message, message_txt: str):
@@ -58,9 +55,12 @@ async def on_message(message: Message):
     await send_message(message, message_text)
 
 def run():
+    # SET UP BOT
+    intents = Intents.default()
+    intents.message_content = True
+    client = Client(intents=intents)
+    
     if TOKEN == '':
+        print("NO TOKEN, LOADING TOKEN")
         load_token()
-    client.run(TOKEN)
-
-if __name__ == '__main__':
     client.run(TOKEN)
