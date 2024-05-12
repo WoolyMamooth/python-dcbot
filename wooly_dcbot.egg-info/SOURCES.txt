@@ -1,0 +1,17 @@
+setup.py
+wooly_dcbot/__init__.py
+wooly_dcbot/responses.py
+wooly_dcbot/run.py
+wooly_dcbot/utils.py
+wooly_dcbot.egg-info/PKG-INFO
+wooly_dcbot.egg-info/SOURCES.txt
+wooly_dcbot.egg-info/dependency_links.txt
+wooly_dcbot.egg-info/requires.txt
+wooly_dcbot.egg-info/top_level.txt
+wooly_dcbot/games/__init__.py
+wooly_dcbot/games/hangman.py
+wooly_dcbot/games/math_practice.py
+wooly_dcbot/games/tictactoe.py
+wooly_dcbot/net/__init__.py
+wooly_dcbot/net/anime.py
+wooly_dcbot/net/api.py
